@@ -5,11 +5,15 @@ import java.util.List;
 
 public class Function {
     private String returnType;
+
     private String name;
+
     private List<String> returnStatement  = new ArrayList<>();
 
     private List<Attribute> parameterList = new ArrayList<>();
+
     private List<Attribute> variableList = new ArrayList<>();
+
     private String statement;
 
     public String getReturnType() {
