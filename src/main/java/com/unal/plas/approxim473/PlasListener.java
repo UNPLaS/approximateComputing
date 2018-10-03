@@ -9,13 +9,12 @@ import java.util.*;
 
 public class PlasListener extends CPP14BaseListener {
 
-    Map<String,Integer> ruleIndexMap;
-    Integer identation=0;
-    String tabulatorSymbol ="\t";
-    List<Object> scopeStack = new ArrayList<Object>();
-    List<Integer> indexContextStackFunction = new ArrayList<Integer>();
-    List<Integer> indexContextStackLoop = new ArrayList<Integer>();
-
+    private Map<String,Integer> ruleIndexMap;
+    private Integer identation=0;
+    private String tabulatorSymbol ="\t";
+    private List<Object> scopeStack = new ArrayList<>();
+    private List<Integer> indexContextStackFunction = new ArrayList<>();
+    private List<Integer> indexContextStackLoop = new ArrayList<>();
 
     private String getTabulation(int i){
        return String.join("", Collections.nCopies(i, tabulatorSymbol));
@@ -64,7 +63,7 @@ public class PlasListener extends CPP14BaseListener {
                     }
                 }
             }
-        }   
+        }
         super.enterPostfixexpression(ctx);
     }
 
