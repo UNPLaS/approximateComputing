@@ -1,10 +1,12 @@
 package com.unal.plas.approxim473.model;
 
 import com.unal.plas.grammars.CPP14Parser;
+import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Data
 public class Iterator {
     private String type;
     private List<Attribute> parameterList = new ArrayList<>();
@@ -20,37 +22,5 @@ public class Iterator {
         statement = ctx.statement();
         condition  =ctx.condition();
         expresion = ctx.expression();
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public List<Attribute> getParameterList() {
-        return parameterList;
-    }
-
-    public List<Attribute> getVariableList() {
-        return variableList;
-    }
-
-    public List<String> getFunctionsCalled() {
-        return functionsCalled;
-    }
-
-    public List<String> getAssignations() {
-        return assignations;
-    }
-
-    public CPP14Parser.ConditionContext getCondition() {
-        return condition;
-    }
-
-    public CPP14Parser.ExpressionContext getExpresion() {
-        return expresion;
-    }
-
-    public CPP14Parser.StatementContext getStatement() {
-        return statement;
     }
 }

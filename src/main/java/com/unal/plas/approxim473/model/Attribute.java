@@ -1,5 +1,8 @@
 package com.unal.plas.approxim473.model;
 
+import lombok.Data;
+
+@Data
 public class Attribute {
 
     String type;
