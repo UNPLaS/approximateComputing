@@ -1,6 +1,7 @@
 package com.unal.plas.approxim473;
 
 import com.sun.tools.javac.util.StringUtils;
+import com.unal.plas.approxim473.model.Function;
 import com.unal.plas.approxim473.model.Iterator;
 import com.unal.plas.grammars.CPP14BaseListener;
 import com.unal.plas.grammars.CPP14Parser;
@@ -68,6 +69,12 @@ public class PlasListener extends CPP14BaseListener {
 
 
     @Override
+    public void exitCompoundstatement(CPP14Parser.CompoundstatementContext ctx) {
+        print(ctx.getText());
+        super.exitCompoundstatement(ctx);
+    }
+
+    @Override
     public void enterJumpstatement(CPP14Parser.JumpstatementContext ctx) {
         for(int i=0;i<ctx.getChildCount();i++){
             if(ctx.getChild(i).getText().equals("return")){
@@ -86,7 +93,8 @@ public class PlasListener extends CPP14BaseListener {
     @Override
     public void enterFunctionbody(CPP14Parser.FunctionbodyContext ctx) {
         identation++;
-        scopeStack.add("function");
+        scopeStack.add(new Function());
+        indexContextStackFunction.add(scopeStack.size()-1);
         print(scopeStack.toString());
         super.enterFunctionbody(ctx);
     }
@@ -97,8 +105,6 @@ public class PlasListener extends CPP14BaseListener {
         scopeStack.remove("function");
         super.exitFunctionbody(ctx);
     }
-
-
 
     @Override
     public void enterNoptrdeclaratorB(CPP14Parser.NoptrdeclaratorBContext ctx) {
@@ -114,9 +120,8 @@ public class PlasListener extends CPP14BaseListener {
 
     @Override
     public void enterFunctiondefinition(CPP14Parser.FunctiondefinitionContext ctx) {
-       // System.out.println("definiendo funcion "+ctx.declarator().ptrdeclarator().noptrdeclarator().noptrdeclarator().getText()+" "+ctx.declarator().ptrdeclarator().noptrdeclarator().parametersandqualifiers().getText());
+        // System.out.println("definiendo funcion "+ctx.declarator().ptrdeclarator().noptrdeclarator().noptrdeclarator().getText()+" "+ctx.declarator().ptrdeclarator().noptrdeclarator().parametersandqualifiers().getText());
         super.enterFunctiondefinition(ctx);
     }
-
 
 }

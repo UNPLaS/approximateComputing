@@ -29,7 +29,7 @@ public class App
                         "int main() \n" +
                         "{ \n" +
                         " \n" +
-                        "    for(int i = 0; i < 3; ++i)  \n" +
+                        "    for(int i = 0; i < p; ++i)  \n" +
                         "    { \n" +
                         "        for(j = 0; j < 3; ++j)  \n" +
                         "    { \n" +
