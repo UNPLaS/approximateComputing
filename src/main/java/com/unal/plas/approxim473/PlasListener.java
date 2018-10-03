@@ -1,6 +1,7 @@
 package com.unal.plas.approxim473;
 
 import com.sun.tools.javac.util.StringUtils;
+import com.unal.plas.approxim473.model.Iterator;
 import com.unal.plas.grammars.CPP14BaseListener;
 import com.unal.plas.grammars.CPP14Parser;
 import org.antlr.v4.runtime.tree.TerminalNode;
@@ -31,10 +32,11 @@ public class PlasListener extends CPP14BaseListener {
 
     @Override
     public void enterCannonicalforestatement(CPP14Parser.CannonicalforestatementContext ctx) {
+        Iterator iterator = new Iterator(ctx);
+        scopeStack.add(iterator);
         identation++;
-        scopeStack.add("loop");
-        print(scopeStack.toString());
-        print("entrando de ciclo");
+        indexContextStackLoop.add(scopeStack.size()-1);
+        print("entrando de ciclo -> candidato a aproximacion");
         super.enterCannonicalforestatement(ctx);
     }
 
@@ -44,12 +46,9 @@ public class PlasListener extends CPP14BaseListener {
         scopeStack.remove("loop");
         print("Saliendo de ciclo");
         ctx.removeLastChild();
+        Object t = scopeStack.get(indexContextStackLoop.get(indexContextStackLoop.size() - 1));
+        print(t.getClass().toString());
         super.exitCannonicalforestatement(ctx);
-    }
-
-    @Override
-    public void visitTerminal(TerminalNode node) {
-        super.visitTerminal(node);
     }
 
     @Override
@@ -70,10 +69,10 @@ public class PlasListener extends CPP14BaseListener {
 
     @Override
     public void enterJumpstatement(CPP14Parser.JumpstatementContext ctx) {
-        System.out.println("Retorno: " + ctx.getText());
-        System.out.println("Retorno: " + ctx.getChild(0).getText().equals("return"));
         for(int i=0;i<ctx.getChildCount();i++){
-            System.out.println(ctx.getChild(i).getText().equals("return"));
+            if(ctx.getChild(i).getText().equals("return")){
+                print("retorno de funcion");
+            }
         }
         super.enterJumpstatement(ctx);
     }
@@ -99,9 +98,25 @@ public class PlasListener extends CPP14BaseListener {
         super.exitFunctionbody(ctx);
     }
 
+
+
+    @Override
+    public void enterNoptrdeclaratorB(CPP14Parser.NoptrdeclaratorBContext ctx) {
+        print("Definición "+ctx.getText());
+        super.enterNoptrdeclaratorB(ctx);
+    }
+
+    @Override
+    public void enterNoptrdeclaratorA(CPP14Parser.NoptrdeclaratorAContext ctx) {
+        print("Variable "+ctx.getText());
+        super.enterNoptrdeclaratorA(ctx);
+    }
+
     @Override
     public void enterFunctiondefinition(CPP14Parser.FunctiondefinitionContext ctx) {
-        System.out.println("definiendo funcion "+ctx.declarator().ptrdeclarator().noptrdeclarator().noptrdeclarator().getText()+" "+ctx.declarator().ptrdeclarator().noptrdeclarator().parametersandqualifiers().getText());
+       // System.out.println("definiendo funcion "+ctx.declarator().ptrdeclarator().noptrdeclarator().noptrdeclarator().getText()+" "+ctx.declarator().ptrdeclarator().noptrdeclarator().parametersandqualifiers().getText());
         super.enterFunctiondefinition(ctx);
     }
+
+
 }

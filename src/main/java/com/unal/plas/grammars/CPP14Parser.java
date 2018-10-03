@@ -4174,9 +4174,36 @@ public class CPP14Parser extends Parser {
 	}
 
 	public static class AssignmentexpressionContext extends ParserRuleContext {
+		public AssignmentexpressionContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_assignmentexpression; }
+	 
+		public AssignmentexpressionContext() { }
+		public void copyFrom(AssignmentexpressionContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class AssignmentexpressionunaryContext extends AssignmentexpressionContext {
 		public ConditionalexpressionContext conditionalexpression() {
 			return getRuleContext(ConditionalexpressionContext.class,0);
 		}
+		public AssignmentexpressionunaryContext(AssignmentexpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CPP14Listener ) ((CPP14Listener)listener).enterAssignmentexpressionunary(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CPP14Listener ) ((CPP14Listener)listener).exitAssignmentexpressionunary(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CPP14Visitor ) return ((CPP14Visitor<? extends T>)visitor).visitAssignmentexpressionunary(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class AssignmentexpressioncanonicalContext extends AssignmentexpressionContext {
 		public LogicalorexpressionContext logicalorexpression() {
 			return getRuleContext(LogicalorexpressionContext.class,0);
 		}
@@ -4186,24 +4213,37 @@ public class CPP14Parser extends Parser {
 		public InitializerclauseContext initializerclause() {
 			return getRuleContext(InitializerclauseContext.class,0);
 		}
-		public ThrowexpressionContext throwexpression() {
-			return getRuleContext(ThrowexpressionContext.class,0);
-		}
-		public AssignmentexpressionContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_assignmentexpression; }
+		public AssignmentexpressioncanonicalContext(AssignmentexpressionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CPP14Listener ) ((CPP14Listener)listener).enterAssignmentexpression(this);
+			if ( listener instanceof CPP14Listener ) ((CPP14Listener)listener).enterAssignmentexpressioncanonical(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CPP14Listener ) ((CPP14Listener)listener).exitAssignmentexpression(this);
+			if ( listener instanceof CPP14Listener ) ((CPP14Listener)listener).exitAssignmentexpressioncanonical(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof CPP14Visitor ) return ((CPP14Visitor<? extends T>)visitor).visitAssignmentexpression(this);
+			if ( visitor instanceof CPP14Visitor ) return ((CPP14Visitor<? extends T>)visitor).visitAssignmentexpressioncanonical(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class AssignmentexpressionthrowContext extends AssignmentexpressionContext {
+		public ThrowexpressionContext throwexpression() {
+			return getRuleContext(ThrowexpressionContext.class,0);
+		}
+		public AssignmentexpressionthrowContext(AssignmentexpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CPP14Listener ) ((CPP14Listener)listener).enterAssignmentexpressionthrow(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CPP14Listener ) ((CPP14Listener)listener).exitAssignmentexpressionthrow(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CPP14Visitor ) return ((CPP14Visitor<? extends T>)visitor).visitAssignmentexpressionthrow(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -4216,6 +4256,7 @@ public class CPP14Parser extends Parser {
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,71,_ctx) ) {
 			case 1:
+				_localctx = new AssignmentexpressionunaryContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(960);
@@ -4223,6 +4264,7 @@ public class CPP14Parser extends Parser {
 				}
 				break;
 			case 2:
+				_localctx = new AssignmentexpressioncanonicalContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(961);
@@ -4234,6 +4276,7 @@ public class CPP14Parser extends Parser {
 				}
 				break;
 			case 3:
+				_localctx = new AssignmentexpressionthrowContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
 				setState(965);
@@ -10297,39 +10340,101 @@ public class CPP14Parser extends Parser {
 	}
 
 	public static class NoptrdeclaratorContext extends ParserRuleContext {
+		public NoptrdeclaratorContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_noptrdeclarator; }
+	 
+		public NoptrdeclaratorContext() { }
+		public void copyFrom(NoptrdeclaratorContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class NoptrdeclaratorAContext extends NoptrdeclaratorContext {
 		public DeclaratoridContext declaratorid() {
 			return getRuleContext(DeclaratoridContext.class,0);
 		}
 		public AttributespecifierseqContext attributespecifierseq() {
 			return getRuleContext(AttributespecifierseqContext.class,0);
 		}
+		public NoptrdeclaratorAContext(NoptrdeclaratorContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CPP14Listener ) ((CPP14Listener)listener).enterNoptrdeclaratorA(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CPP14Listener ) ((CPP14Listener)listener).exitNoptrdeclaratorA(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CPP14Visitor ) return ((CPP14Visitor<? extends T>)visitor).visitNoptrdeclaratorA(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class NoptrdeclaratorDContext extends NoptrdeclaratorContext {
 		public PtrdeclaratorContext ptrdeclarator() {
 			return getRuleContext(PtrdeclaratorContext.class,0);
 		}
+		public NoptrdeclaratorDContext(NoptrdeclaratorContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CPP14Listener ) ((CPP14Listener)listener).enterNoptrdeclaratorD(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CPP14Listener ) ((CPP14Listener)listener).exitNoptrdeclaratorD(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CPP14Visitor ) return ((CPP14Visitor<? extends T>)visitor).visitNoptrdeclaratorD(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class NoptrdeclaratorBContext extends NoptrdeclaratorContext {
 		public NoptrdeclaratorContext noptrdeclarator() {
 			return getRuleContext(NoptrdeclaratorContext.class,0);
 		}
 		public ParametersandqualifiersContext parametersandqualifiers() {
 			return getRuleContext(ParametersandqualifiersContext.class,0);
 		}
-		public ConstantexpressionContext constantexpression() {
-			return getRuleContext(ConstantexpressionContext.class,0);
-		}
-		public NoptrdeclaratorContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_noptrdeclarator; }
+		public NoptrdeclaratorBContext(NoptrdeclaratorContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CPP14Listener ) ((CPP14Listener)listener).enterNoptrdeclarator(this);
+			if ( listener instanceof CPP14Listener ) ((CPP14Listener)listener).enterNoptrdeclaratorB(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CPP14Listener ) ((CPP14Listener)listener).exitNoptrdeclarator(this);
+			if ( listener instanceof CPP14Listener ) ((CPP14Listener)listener).exitNoptrdeclaratorB(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof CPP14Visitor ) return ((CPP14Visitor<? extends T>)visitor).visitNoptrdeclarator(this);
+			if ( visitor instanceof CPP14Visitor ) return ((CPP14Visitor<? extends T>)visitor).visitNoptrdeclaratorB(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class NoptrdeclaratorCContext extends NoptrdeclaratorContext {
+		public NoptrdeclaratorContext noptrdeclarator() {
+			return getRuleContext(NoptrdeclaratorContext.class,0);
+		}
+		public ConstantexpressionContext constantexpression() {
+			return getRuleContext(ConstantexpressionContext.class,0);
+		}
+		public AttributespecifierseqContext attributespecifierseq() {
+			return getRuleContext(AttributespecifierseqContext.class,0);
+		}
+		public NoptrdeclaratorCContext(NoptrdeclaratorContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CPP14Listener ) ((CPP14Listener)listener).enterNoptrdeclaratorC(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CPP14Listener ) ((CPP14Listener)listener).exitNoptrdeclaratorC(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CPP14Visitor ) return ((CPP14Visitor<? extends T>)visitor).visitNoptrdeclaratorC(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -10360,6 +10465,10 @@ public class CPP14Parser extends Parser {
 			case Ellipsis:
 			case Identifier:
 				{
+				_localctx = new NoptrdeclaratorAContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+
 				setState(1676);
 				declaratorid();
 				setState(1678);
@@ -10376,6 +10485,9 @@ public class CPP14Parser extends Parser {
 				break;
 			case LeftParen:
 				{
+				_localctx = new NoptrdeclaratorDContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
 				setState(1680);
 				match(LeftParen);
 				setState(1681);
@@ -10401,7 +10513,7 @@ public class CPP14Parser extends Parser {
 					switch ( getInterpreter().adaptivePredict(_input,176,_ctx) ) {
 					case 1:
 						{
-						_localctx = new NoptrdeclaratorContext(_parentctx, _parentState);
+						_localctx = new NoptrdeclaratorBContext(new NoptrdeclaratorContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_noptrdeclarator);
 						setState(1686);
 						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
@@ -10411,7 +10523,7 @@ public class CPP14Parser extends Parser {
 						break;
 					case 2:
 						{
-						_localctx = new NoptrdeclaratorContext(_parentctx, _parentState);
+						_localctx = new NoptrdeclaratorCContext(new NoptrdeclaratorContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_noptrdeclarator);
 						setState(1688);
 						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");

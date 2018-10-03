@@ -269,11 +269,26 @@ public interface CPP14Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitConditionalexpression(CPP14Parser.ConditionalexpressionContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CPP14Parser#assignmentexpression}.
+	 * Visit a parse tree produced by the {@code assignmentexpressionunary}
+	 * labeled alternative in {@link CPP14Parser#assignmentexpression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitAssignmentexpression(CPP14Parser.AssignmentexpressionContext ctx);
+	T visitAssignmentexpressionunary(CPP14Parser.AssignmentexpressionunaryContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code assignmentexpressioncanonical}
+	 * labeled alternative in {@link CPP14Parser#assignmentexpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAssignmentexpressioncanonical(CPP14Parser.AssignmentexpressioncanonicalContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code assignmentexpressionthrow}
+	 * labeled alternative in {@link CPP14Parser#assignmentexpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAssignmentexpressionthrow(CPP14Parser.AssignmentexpressionthrowContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link CPP14Parser#assignmentoperator}.
 	 * @param ctx the parse tree
@@ -753,11 +768,33 @@ public interface CPP14Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitPtrdeclarator(CPP14Parser.PtrdeclaratorContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CPP14Parser#noptrdeclarator}.
+	 * Visit a parse tree produced by the {@code noptrdeclaratorA}
+	 * labeled alternative in {@link CPP14Parser#noptrdeclarator}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitNoptrdeclarator(CPP14Parser.NoptrdeclaratorContext ctx);
+	T visitNoptrdeclaratorA(CPP14Parser.NoptrdeclaratorAContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code noptrdeclaratorD}
+	 * labeled alternative in {@link CPP14Parser#noptrdeclarator}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNoptrdeclaratorD(CPP14Parser.NoptrdeclaratorDContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code noptrdeclaratorB}
+	 * labeled alternative in {@link CPP14Parser#noptrdeclarator}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNoptrdeclaratorB(CPP14Parser.NoptrdeclaratorBContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code noptrdeclaratorC}
+	 * labeled alternative in {@link CPP14Parser#noptrdeclarator}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNoptrdeclaratorC(CPP14Parser.NoptrdeclaratorCContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link CPP14Parser#parametersandqualifiers}.
 	 * @param ctx the parse tree

@@ -45,8 +45,9 @@ public class App
                         "\n" +
                         "  \n" +
                         "holamundo(1,2);\n" +
-                        "a=holamundo(3,4,4,5);\n" +
-                        "a=holamundo();\n" +
+                        "int a=holamundo(3,4,4,5);\n" +
+                        "float b=holamundo();\n" +
+                        "c=holamundo();\n" +
                         "    return 0; \n" +
                         "    return a==0; \n" +
                         "} ");

@@ -361,9 +361,9 @@ conditionalexpression
 
 assignmentexpression
 :
-	conditionalexpression
-	| logicalorexpression assignmentoperator initializerclause
-	| throwexpression
+	conditionalexpression #assignmentexpressionunary
+	| logicalorexpression assignmentoperator initializerclause #assignmentexpressioncanonical
+	| throwexpression #assignmentexpressionthrow
 ;
 
 assignmentoperator
@@ -868,10 +868,10 @@ ptrdeclarator
 
 noptrdeclarator
 :
-	declaratorid attributespecifierseq?
-	| noptrdeclarator parametersandqualifiers
-	| noptrdeclarator '[' constantexpression? ']' attributespecifierseq?
-	| '(' ptrdeclarator ')'
+	declaratorid attributespecifierseq? #noptrdeclaratorA
+	| noptrdeclarator parametersandqualifiers #noptrdeclaratorB
+	| noptrdeclarator '[' constantexpression? ']' attributespecifierseq? #noptrdeclaratorC
+	| '(' ptrdeclarator ')' #noptrdeclaratorD
 ;
 
 parametersandqualifiers
