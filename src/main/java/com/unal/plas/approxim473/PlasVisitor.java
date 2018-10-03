@@ -29,11 +29,12 @@ public class PlasVisitor extends CPP14BaseVisitor {
         System.out.println(""+ctx.declspecifierseq().getText());
         //Explorar los hijos hasta encontrar estas estructuras de definición de funciones
 
-        if(ctx.declarator().ptrdeclarator().noptrdeclarator().noptrdeclarator().getText().equals("main")){
+        /*if(ctx.declarator().ptrdeclarator().noptrdeclarator().noptrdeclarator().getText().equals("main")){
             System.out.println("función main");
         }
         System.out.println(ctx.declarator().ptrdeclarator().noptrdeclarator().noptrdeclarator().getText());
         System.out.println(ctx.declarator().ptrdeclarator().noptrdeclarator().parametersandqualifiers().getText());
+        /*/
         return super.visitFunctiondefinition(ctx);
     }
 
@@ -60,14 +61,7 @@ public class PlasVisitor extends CPP14BaseVisitor {
         return super.visitPostfixexpression(ctx);
     }
 
-    @Override
-    public Object visitAssignmentexpression(CPP14Parser.AssignmentexpressionContext ctx) {
 
-        System.out.println("asignación "+ctx.getText());
-
-
-        return super.visitAssignmentexpression(ctx);
-    }
 
 
 }

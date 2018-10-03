@@ -318,7 +318,21 @@ public class CPP14BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements 
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitAssignmentexpression(CPP14Parser.AssignmentexpressionContext ctx) { return visitChildren(ctx); }
+	@Override public T visitAssignmentexpressionunary(CPP14Parser.AssignmentexpressionunaryContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitAssignmentexpressioncanonical(CPP14Parser.AssignmentexpressioncanonicalContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitAssignmentexpressionthrow(CPP14Parser.AssignmentexpressionthrowContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -878,7 +892,28 @@ public class CPP14BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements 
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitNoptrdeclarator(CPP14Parser.NoptrdeclaratorContext ctx) { return visitChildren(ctx); }
+	@Override public T visitNoptrdeclaratorA(CPP14Parser.NoptrdeclaratorAContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitNoptrdeclaratorD(CPP14Parser.NoptrdeclaratorDContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitNoptrdeclaratorB(CPP14Parser.NoptrdeclaratorBContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitNoptrdeclaratorC(CPP14Parser.NoptrdeclaratorCContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -438,15 +438,41 @@ public interface CPP14Listener extends ParseTreeListener {
 	 */
 	void exitConditionalexpression(CPP14Parser.ConditionalexpressionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CPP14Parser#assignmentexpression}.
+	 * Enter a parse tree produced by the {@code assignmentexpressionunary}
+	 * labeled alternative in {@link CPP14Parser#assignmentexpression}.
 	 * @param ctx the parse tree
 	 */
-	void enterAssignmentexpression(CPP14Parser.AssignmentexpressionContext ctx);
+	void enterAssignmentexpressionunary(CPP14Parser.AssignmentexpressionunaryContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CPP14Parser#assignmentexpression}.
+	 * Exit a parse tree produced by the {@code assignmentexpressionunary}
+	 * labeled alternative in {@link CPP14Parser#assignmentexpression}.
 	 * @param ctx the parse tree
 	 */
-	void exitAssignmentexpression(CPP14Parser.AssignmentexpressionContext ctx);
+	void exitAssignmentexpressionunary(CPP14Parser.AssignmentexpressionunaryContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code assignmentexpressioncanonical}
+	 * labeled alternative in {@link CPP14Parser#assignmentexpression}.
+	 * @param ctx the parse tree
+	 */
+	void enterAssignmentexpressioncanonical(CPP14Parser.AssignmentexpressioncanonicalContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code assignmentexpressioncanonical}
+	 * labeled alternative in {@link CPP14Parser#assignmentexpression}.
+	 * @param ctx the parse tree
+	 */
+	void exitAssignmentexpressioncanonical(CPP14Parser.AssignmentexpressioncanonicalContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code assignmentexpressionthrow}
+	 * labeled alternative in {@link CPP14Parser#assignmentexpression}.
+	 * @param ctx the parse tree
+	 */
+	void enterAssignmentexpressionthrow(CPP14Parser.AssignmentexpressionthrowContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code assignmentexpressionthrow}
+	 * labeled alternative in {@link CPP14Parser#assignmentexpression}.
+	 * @param ctx the parse tree
+	 */
+	void exitAssignmentexpressionthrow(CPP14Parser.AssignmentexpressionthrowContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link CPP14Parser#assignmentoperator}.
 	 * @param ctx the parse tree
@@ -1246,15 +1272,53 @@ public interface CPP14Listener extends ParseTreeListener {
 	 */
 	void exitPtrdeclarator(CPP14Parser.PtrdeclaratorContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CPP14Parser#noptrdeclarator}.
+	 * Enter a parse tree produced by the {@code noptrdeclaratorA}
+	 * labeled alternative in {@link CPP14Parser#noptrdeclarator}.
 	 * @param ctx the parse tree
 	 */
-	void enterNoptrdeclarator(CPP14Parser.NoptrdeclaratorContext ctx);
+	void enterNoptrdeclaratorA(CPP14Parser.NoptrdeclaratorAContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CPP14Parser#noptrdeclarator}.
+	 * Exit a parse tree produced by the {@code noptrdeclaratorA}
+	 * labeled alternative in {@link CPP14Parser#noptrdeclarator}.
 	 * @param ctx the parse tree
 	 */
-	void exitNoptrdeclarator(CPP14Parser.NoptrdeclaratorContext ctx);
+	void exitNoptrdeclaratorA(CPP14Parser.NoptrdeclaratorAContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code noptrdeclaratorD}
+	 * labeled alternative in {@link CPP14Parser#noptrdeclarator}.
+	 * @param ctx the parse tree
+	 */
+	void enterNoptrdeclaratorD(CPP14Parser.NoptrdeclaratorDContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code noptrdeclaratorD}
+	 * labeled alternative in {@link CPP14Parser#noptrdeclarator}.
+	 * @param ctx the parse tree
+	 */
+	void exitNoptrdeclaratorD(CPP14Parser.NoptrdeclaratorDContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code noptrdeclaratorB}
+	 * labeled alternative in {@link CPP14Parser#noptrdeclarator}.
+	 * @param ctx the parse tree
+	 */
+	void enterNoptrdeclaratorB(CPP14Parser.NoptrdeclaratorBContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code noptrdeclaratorB}
+	 * labeled alternative in {@link CPP14Parser#noptrdeclarator}.
+	 * @param ctx the parse tree
+	 */
+	void exitNoptrdeclaratorB(CPP14Parser.NoptrdeclaratorBContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code noptrdeclaratorC}
+	 * labeled alternative in {@link CPP14Parser#noptrdeclarator}.
+	 * @param ctx the parse tree
+	 */
+	void enterNoptrdeclaratorC(CPP14Parser.NoptrdeclaratorCContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code noptrdeclaratorC}
+	 * labeled alternative in {@link CPP14Parser#noptrdeclarator}.
+	 * @param ctx the parse tree
+	 */
+	void exitNoptrdeclaratorC(CPP14Parser.NoptrdeclaratorCContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link CPP14Parser#parametersandqualifiers}.
 	 * @param ctx the parse tree

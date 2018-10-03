@@ -532,13 +532,37 @@ public class CPP14BaseListener implements CPP14Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAssignmentexpression(CPP14Parser.AssignmentexpressionContext ctx) { }
+	@Override public void enterAssignmentexpressionunary(CPP14Parser.AssignmentexpressionunaryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAssignmentexpression(CPP14Parser.AssignmentexpressionContext ctx) { }
+	@Override public void exitAssignmentexpressionunary(CPP14Parser.AssignmentexpressionunaryContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAssignmentexpressioncanonical(CPP14Parser.AssignmentexpressioncanonicalContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAssignmentexpressioncanonical(CPP14Parser.AssignmentexpressioncanonicalContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAssignmentexpressionthrow(CPP14Parser.AssignmentexpressionthrowContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAssignmentexpressionthrow(CPP14Parser.AssignmentexpressionthrowContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -1492,13 +1516,49 @@ public class CPP14BaseListener implements CPP14Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNoptrdeclarator(CPP14Parser.NoptrdeclaratorContext ctx) { }
+	@Override public void enterNoptrdeclaratorA(CPP14Parser.NoptrdeclaratorAContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNoptrdeclarator(CPP14Parser.NoptrdeclaratorContext ctx) { }
+	@Override public void exitNoptrdeclaratorA(CPP14Parser.NoptrdeclaratorAContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNoptrdeclaratorD(CPP14Parser.NoptrdeclaratorDContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNoptrdeclaratorD(CPP14Parser.NoptrdeclaratorDContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNoptrdeclaratorB(CPP14Parser.NoptrdeclaratorBContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNoptrdeclaratorB(CPP14Parser.NoptrdeclaratorBContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNoptrdeclaratorC(CPP14Parser.NoptrdeclaratorCContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNoptrdeclaratorC(CPP14Parser.NoptrdeclaratorCContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
