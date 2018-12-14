@@ -17,6 +17,7 @@ public class PlasListener extends CPP14BaseListener {
     private List<Object> scopeStack = new ArrayList<>();
     private List<Integer> indexContextStackFunction = new ArrayList<>();
     private List<Integer> indexContextStackLoop = new ArrayList<>();
+    private List<UUID> forStatementStackLoop = new ArrayList<>();
 
     private String getTabulation(int i){
        return String.join("", Collections.nCopies(i, tabulatorSymbol));
@@ -33,11 +34,13 @@ public class PlasListener extends CPP14BaseListener {
 
     @Override
     public void enterCannonicalforestatement(CPP14Parser.CannonicalforestatementContext ctx) {
+        UUID uuid = UUID.randomUUID();
+        forStatementStackLoop.add(uuid);
         Iterator iterator = new Iterator(ctx);
         scopeStack.add(iterator);
         identation++;
         indexContextStackLoop.add(scopeStack.size()-1);
-        print("entrando de ciclo -> candidato a aproximacion");
+        print("I =" + uuid.toString());
         super.enterCannonicalforestatement(ctx);
     }
 
@@ -45,7 +48,8 @@ public class PlasListener extends CPP14BaseListener {
     public void exitCannonicalforestatement(CPP14Parser.CannonicalforestatementContext ctx) {
         identation--;
         scopeStack.remove("loop");
-        print("Saliendo de ciclo");
+        UUID uuid = forStatementStackLoop.remove(forStatementStackLoop.size() - 1);
+        print("O = " + uuid.toString());
         ctx.removeLastChild();
         Object t = scopeStack.get(indexContextStackLoop.get(indexContextStackLoop.size() - 1));
         print(t.getClass().toString());
@@ -124,4 +128,20 @@ public class PlasListener extends CPP14BaseListener {
         super.enterFunctiondefinition(ctx);
     }
 
+
+    ///IDENTIFICAR ASIGNACION
+    @Override
+    public void exitAssignmentexpressioncanonical(CPP14Parser.AssignmentexpressioncanonicalContext ctx) {
+        print("SALE LOCAL "+ctx.getText());
+        super.exitAssignmentexpressioncanonical(ctx);
+    }
+
+    //Variable definida en el scope
+
+    @Override
+    public void enterAssignmentexpressioncanonical(CPP14Parser.AssignmentexpressioncanonicalContext ctx) {
+        print("ENTRA LOCAL "+ctx.getText());
+        super.enterAssignmentexpressioncanonical(ctx);
+    }
+    ///IDENTIFICAR ASIGNACION
 }
